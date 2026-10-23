@@ -1,0 +1,26 @@
+Find_Kth_Smallest(arr, k) {
+
+	if arr.length == 1
+		return arr[0]
+
+	int pivot = arr[floor(math.rand() * arr.length())]
+	smaller = []
+	equal = []
+	larger = []
+
+	for each x in arr {
+		if x > pivot:
+			larger.append(x)
+		else if x == pivot:
+			equal.append(x)
+		else if x < pivot:
+			smaller.append(x)	
+	}
+
+	if k <= smaller.length():
+		return Find_Kth_Smallest(smaller, k)
+	else if k <= smaller.length() + equal.length():
+		return pivot;
+	else:
+		return Find_Kth_Smallest(larger, k-smaller.length()-equal.length())
+}

@@ -1,0 +1,23 @@
+To find the k-th smallest number we used a divide and conqure method. First we pick a random number to be our pivot, then iterate through the array divding into sub arays smaller, equal, and greater than the pivot. We can then use the size of the arrays to determine which sub array K is in. After determining we recursivly call our method, passing in the correct subarray. If K is in the greater sub array we subtract the size of the smaller and equal arrays from K before passing it in. This will continue until either the size of the sub array is 1 or K is in the equal sub array, then the pivot is returned.
+
+ 
+Illistration 1
+        [5, 1, 6, 7, 3, 4, 8]     pivot = 5
+           /       |        \
+   [1, 3, 4]      [5]     [6, 7, 8]
+   smaller       equal     greater
+   size 3        size 1    size 3
+
+   K = 3 ≤ 3  →  answer is in smaller
+
+
+Illistration 2
+
+Call 1: [5, 1, 6, 7, 3, 4, 8]  K=3  pivot=5
+        smaller=[1,3,4]  equal=[5]  greater=[6,7,8]
+        K ≤ 3 → go to smaller, K stays 3
+
+Call x: **MAGIC**
+
+Final call: [4]  K=1
+        size 1 → return 4 ✅
