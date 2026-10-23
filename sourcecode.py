@@ -3,6 +3,9 @@ import random
 
 def Find_Kth_Smallest(arr, k):
 
+    if not arr or not (1 <= k <= len(arr)):
+        raise ValueError("Invalid array or k out of bounds")
+    
     if len(arr) == 1:
         return arr[0]
 
