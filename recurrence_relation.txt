@@ -1,0 +1,12 @@
+DERIVATION
+----------
+The recurrence relation that was derived from our program was as follows:
+
+T(n) = T(n-1) + cn
+
+The T(n-1) comes from the recursion call in the large if statement at the end of the recursion.
+We use the -1 because in the worst case scenario, only one element is removed from the array with each call.
+The cn added to the recursion comes from the loop through the array that is required to build the smaller/pivot/larger lists.
+
+SOLVE
+----------
